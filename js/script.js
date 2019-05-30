@@ -216,6 +216,25 @@ $("#poker").on('pageshow', function(event){
 });//End Poker Game Page shown
 
 function statusUpdate(){
+	//get game status and show it
+	$.ajax({
+		url: sessionStorage.serverName + "/gamestatus",
+		type: "POST",
+		data: {"gameId": sessionStorage.gameId},
+		dataType: "jsonp",
+		success: function(data) {
+			if(!data.gameStatus){
+				$("#statusBad").popup("open");
+				return;
+			}
+			updateWithGameStatus(data);
+		},
+		error: function(){
+			$("#statusBad").popup("open");
+		}
+	});//end AJAX
+
+	//get player status and show it
 	$.ajax({
 		url: sessionStorage.serverName + "/status",
 		type: "POST",
@@ -292,6 +311,27 @@ function updateWithStatus(status){
 	}
 	
 }
+
+
+function updateWithGameStatus(status){
+	// console.log(status.cards);
+	if(status.cards){
+		//show public cards
+		
+		src_card3 = (status.cards[0])? "img/"+status.cards[0] + ".png" : "img/card_bg.jpg";
+		src_card4 = (status.cards[1])? "img/"+status.cards[1] + ".png" : "img/card_bg.jpg";
+		src_card5 = (status.cards[2])? "img/"+status.cards[2] + ".png" : "img/card_bg.jpg";
+		src_card6 = (status.cards[3])? "img/"+status.cards[3] + ".png" : "img/card_bg.jpg";
+		src_card7 = (status.cards[4])? "img/"+status.cards[4] + ".png" : "img/card_bg.jpg";
+		$("#card3").attr("src",src_card3);
+		$("#card4").attr("src",src_card4);
+		$("#card5").attr("src",src_card5);
+		$("#card6").attr("src",src_card6);
+		$("#card7").attr("src",src_card7);
+		console.log(src_card7);
+	}
+}
+
 
 function postAction(){
 	$("#betslider").val(0);

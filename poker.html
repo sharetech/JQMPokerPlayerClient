@@ -15,16 +15,33 @@
     	<div data-role="header">
             <h1>Poker</h1>
             <a href="#" id="leaveGameButton" data-icon="delete">Leave Game</a>
-        </div><!-- /header -->
+		</div><!-- /header -->
+
         <div data-role="content">
+				<div id="card_wrapper_public">
+						<div class="card_public"><img id="card3" src="img/card_bg.jpg" /></div>
+							<div class="card_public"><img id="card4" src="img/card_bg.jpg" /></div>
+							<div class="card_public"><img id="card5" src="img/card_bg.jpg" /></div>
+							<div class="card_public"><img id="card6" src="img/card_bg.jpg" /></div>
+							<div class="card_public"><img id="card7" src="img/card_bg.jpg" /></div>
+					</div>
         	<div id="card_wrapper">
-        		<div class="card1"><img id="card1" src="img/card_bg.jpg" /></div>
-        		<div class="card2"><img id="card2" src="img/card_bg.jpg" /></div>
+        		<div class="card1" with="15%"><img id="card1" src="img/card_bg.jpg" /></div>
+				<div class="card2" with="15%"><img id="card2" src="img/card_bg.jpg" /></div>
+			</div>
+			<!-- <div id="card_wrapper_public">
+					<div class="card3"><img id="card3" src="img/card_bg.jpg" /></div>
+					<div class="card4"><img id="card4" src="img/card_bg.jpg" /></div>
+					<div class="card5"><img id="card5" src="img/card_bg.jpg" /></div>
+					<div class="card6"><img id="card6" src="img/card_bg.jpg" /></div>
+					<div class="card7"><img id="card7" src="img/card_bg.jpg" /></div>
+			</div> -->
         	</div>
         	<div class="separator"></div>
         	<div id="info_wrapper">
         		<div class="center_wrapper"><h2 id="status">Waiting</h2></div>
-        		<div class="center_wrapper chipstext">Chips: <span id="chips">0</span></div>
+				<div class="center_wrapper chipstext">Chips: <span id="chips">0</span></div>
+			
         		<div id="action_group">
         			<div id="check_layout">
 	        			<a href="#" class="checkButton" data-role="button" data-inline="true">Check</a>

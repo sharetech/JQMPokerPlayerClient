@@ -50,6 +50,16 @@
 	float:left;
 }
 
+
+.card_public{
+	width: 15%;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align:center;
+	float:left;
+}
+
+
 #status{
 	margin-bottom: .3em;
 }
